@@ -4,8 +4,8 @@ QA engineer Challenge
 # Automation
 To setup Cypress.io 
 
-1.Navigate to cypresseTest folder
-2. Run npm Install
+*Navigate to cypresseTest folder
+*Run npm Install
 
 To run the automation test in the terminal enter the following
 
