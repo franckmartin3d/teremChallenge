@@ -1,6 +1,6 @@
-describe("Test Case Add Items", () => {
+describe("Test Case Wishlist Quantities", () => {
     // Navigating to myWishlist Page
-    it("Add Items to whistlist", () => {
+    it("Add Items to whistlist to verify quantities", () => {
 
     //PREREQUIST
     // navigate to website
@@ -14,10 +14,10 @@ describe("Test Case Add Items", () => {
     cy.get("#passwd").type("foxy1234");
     cy.get("#SubmitLogin > span").click();
     //Create a whishlist
-    cy.get("#name").type("QuatitiesWishlist");
+    cy.get("#name").type("QuantitiesWishlist");
     cy.get("#submitWishlist > span").click();
     // Validation
-    cy.contains("QuatitiesWishlist");
+    cy.contains("QuantitiesWishlist");
 
     //STEPS TO TEST
     // 1. In Popular Item select "Faded Short Sleeve T-shirts
@@ -34,6 +34,7 @@ describe("Test Case Add Items", () => {
     cy.get('.account').click()
     cy.get('.lnk_wishlist').click()
         // validate quantities 1
+        cy.get('.bold').should('include','1')
     
     // 4. In Popular Item select "Faded Short Sleeve T-shirts
     cy.get(':nth-child(2) > .product-content > h5 > .product-name').click()
@@ -48,6 +49,7 @@ describe("Test Case Add Items", () => {
     cy.get('.account').click()
     cy.get('.lnk_wishlist').click()
         // validate quantities 2
+        cy.get('.bold').should('include','2')
 
 
     
@@ -89,7 +91,7 @@ describe("Test Case Add Items", () => {
     // TEARDOWN
     // / delete whishlist
     cy.wait(600);
-    cy.get('.icon-remove').click()
+    cy.get('.icon-remove').click( { multiple: true })
     cy.wait(600)
 
     // sign out
