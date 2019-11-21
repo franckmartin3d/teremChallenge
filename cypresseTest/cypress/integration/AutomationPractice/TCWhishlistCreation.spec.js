@@ -26,6 +26,7 @@ describe("Test Case Wishlist Creation", () => {
 
     // validation Needed
 
+   //  TEARDOWN
     // sign out
     cy.get("nav > :nth-child(2) > .logout").click();
     // validation Needed
