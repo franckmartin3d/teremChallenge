@@ -1,31 +1,32 @@
-describe("Test Case Wishlist Creation",  ()=>{
-    
+describe("Test Case Wishlist Creation", () => {
+  // Navigating to myWishlist Page
+  it("Create a whislist", () => {
+    cy.visit(
+      "http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist"
+    );
+    // validation Needed
 
-     // Navigating to myWishlist Page
-     it('Create a whislist',() =>{
-        cy.visit('http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist')
+    // Sign In into wishlists
+    cy.get("#email").type("franck.martin3d@gmail.com");
+    cy.get("#passwd").type("foxy1234");
+    cy.get("#SubmitLogin > span").click();
+    // Validation Needed
+    // cy.contains('#mywishlist')
 
+    // Create A wishlist
+    cy.get("#name").type("WhishToDelete");
+    cy.get("#submitWishlist > span").click();
+    // Validation
+    cy.contains("WhishToDelete");
 
-         // Sign In into wishlists
-        cy.get('#email').type("franck.martin3d@gmail.com")
-        cy.get('#passwd').type("foxy1234")
-        cy.get('#SubmitLogin > span').click()
+    // delete whishlist
+    cy.wait(600);
+    cy.get(".wishlist_delete").click();
+    // validation Needed
 
-        // Validation Needed
-        // cy.contains('#mywishlist')
-
-        // Create A wishlist
-        cy.get('#name').type("testCase1")
-        cy.get('#submitWishlist > span').click()
-        
-
-           // Validation 
-           cy.contains('testCase1')
-        
-
-
-    })
-   
-
-    
-})
+    // sign out
+    cy.get("nav > :nth-child(2) > .logout").click();
+    // validation Needed
+    cy.contains("Sign in");
+  });
+});
