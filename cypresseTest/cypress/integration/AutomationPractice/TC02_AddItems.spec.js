@@ -69,7 +69,7 @@ describe("Test Case Add Items", () => {
     // TEARDOWN
     // delete whishlist
     cy.wait(600);
-    cy.get('.icon-remove').click()
+    cy.get('.icon-remove').click({ multiple: true })
     cy.wait(600)
 
     // sign out
