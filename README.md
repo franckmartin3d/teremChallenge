@@ -11,7 +11,7 @@ To run the automation test in UI from the terminal enter the following
 
 ./node_modules/.bin/cypress open
 
-Once Cypress is open run the test under the AutomationPractice Folder
+Once Cypress is open select "Run All Specs"
 
 To Run in Command line 
 from cypresseTest folder
