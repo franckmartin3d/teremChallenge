@@ -21,12 +21,12 @@ describe("Test Case Wishlist Creation", () => {
 
     // delete whishlist
     cy.wait(600);
-    cy.get('.icon-remove').click({ multiple: true })
-    cy.wait(600)
+    cy.get(".icon-remove").click({ multiple: true });
+    cy.wait(600);
 
     // validation Needed
 
-   //  TEARDOWN
+    //  TEARDOWN
     // sign out
     cy.get("nav > :nth-child(2) > .logout").click();
     // validation Needed
