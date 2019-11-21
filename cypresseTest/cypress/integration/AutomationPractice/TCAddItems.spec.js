@@ -69,7 +69,8 @@ describe("Test Case Add Items", () => {
     // TEARDOWN
     // delete whishlist
     cy.wait(600);
-    cy.get(".wishlist_delete").click();
+    cy.get('.icon-remove').click()
+    cy.wait(600)
 
     // sign out
     cy.get("nav > :nth-child(2) > .logout").click();

@@ -21,7 +21,9 @@ describe("Test Case Wishlist Creation", () => {
 
     // delete whishlist
     cy.wait(600);
-    cy.get(".wishlist_delete").click();
+    cy.get('.icon-remove').click()
+    cy.wait(600)
+
     // validation Needed
 
     // sign out

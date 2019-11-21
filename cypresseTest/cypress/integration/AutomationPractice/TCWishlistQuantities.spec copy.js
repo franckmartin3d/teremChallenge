@@ -4,9 +4,9 @@ describe("Test Case Add Items", () => {
 
     //PREREQUIST
     // navigate to website
-      cy.visit(
-        "http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist"
-      );
+    //   cy.visit(
+    //     "http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist"
+    //   );
       
 
     //Log in user
