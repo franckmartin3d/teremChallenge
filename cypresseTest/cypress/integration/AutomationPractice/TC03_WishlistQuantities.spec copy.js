@@ -52,10 +52,7 @@ describe("Test Case Add Items", () => {
 
     
     // 7. In Popular Item select "Faded Short Sleeve T-shirts
-    cy.get(':nth-child(2) > .product-content > h5 > .product-name').click()
-
     // 8. Select Size M
-    cy.get('#group_1')
     // 9. On the right side of the screen select "Add to wishlist"
     // 10. Navigate to your wishlist (user => MY WHISHLIST)
     
@@ -65,9 +62,41 @@ describe("Test Case Add Items", () => {
     // 14. Navigate to your wishlist (user => MY WHISHLIST)
     
     // 15. In Popular Item select "Faded Short Sleeve T-shirts
+    cy.get(':nth-child(2) > .product-content > h5 > .product-name').click()
+
     // 16. Select color Blue
+    cy.wait(600)
+    cy.get('#color_14').click()
+        // validate
+    cy.url().should('include', 'color-blue')
+
     // 17. On the right side of the screen select "Add to wishlist"
+    cy.get('#wishlist_button').click()
+        // Validate
+        cy.contains('Added to your wishlist.')
+        cy.get('.fancybox-item').click()
+
     // 18. Navigate to your wishlist (user => MY WHISHLIST)
+    cy.get('.account').click()
+    cy.get('.lnk_wishlist').click()
+    cy.get('[style="width:200px;"] > a').click()
+
+        // validate quantities 2
+        cy.get('.wlp_bought_list').contains('S, Orange').should('be.visible')
+        cy.get('.wlp_bought_list').contains('S, Blue').should('be.visible')
+    
+
+    // TEARDOWN
+    // / delete whishlist
+    cy.wait(600);
+    cy.get('.icon-remove').click()
+    cy.wait(600)
+
+    // sign out
+    cy.get("nav > :nth-child(2) > .logout").click();
+        // validation Needed
+        cy.contains("Sign in");
+
     });
 
 });
