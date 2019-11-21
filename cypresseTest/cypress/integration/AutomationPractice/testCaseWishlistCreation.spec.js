@@ -11,7 +11,7 @@ describe("Test Case Wishlist Creation",  ()=>{
 
 
      // Navigating to myWishlist Page
-     it('Navigate to AP site',() =>{
+     it('Create a whislist',() =>{
         cy.visit('http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist')
     })
     // Sign In into wishlists
@@ -28,7 +28,7 @@ describe("Test Case Wishlist Creation",  ()=>{
         cy.get('#name').type("testCase1")
         cy.get('#submitWishlist > span').click()
         // Validation Needed
-        // cy.contains('#mywishlist')
+        cy.contains('testCase1')
     })
    
 
